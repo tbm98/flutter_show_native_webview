@@ -15,7 +15,7 @@ class MainActivity : FlutterActivity() {
             // Note: this method is invoked on the main thread.
             // TODO
             if (call.method == "show") {
-                show()
+                show(call.argument<String>("url"))
 
 //                if (batteryLevel != -1) {
 //                    result.success(batteryLevel)
@@ -28,8 +28,9 @@ class MainActivity : FlutterActivity() {
         }
     }
 
-    private fun show() {
+    private fun show(url:String?) {
         val intent = Intent(this, WebViewActivity::class.java)
+        intent.putExtra("url",url)
         startActivity(intent)
     }
 }

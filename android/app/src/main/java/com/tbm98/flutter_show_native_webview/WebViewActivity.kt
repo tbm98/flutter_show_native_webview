@@ -18,6 +18,7 @@ class WebViewActivity : AppCompatActivity() {
                 return true
             }
         }
-        webView.loadUrl("https://www.google.com/")
+        val myIntent = intent
+        webView.loadUrl(myIntent.extras.getString("url"))
     }
 }

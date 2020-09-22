@@ -33,7 +33,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Future<void> _getBatteryLevel() async {
     try {
-      final result = await platform.invokeMethod('show');
+      final result = await platform.invokeMethod('show',{
+        'url':'https://www.google.com/search?q=tbm98'
+      });
     } on PlatformException catch (e) {
       print(e);
     }
